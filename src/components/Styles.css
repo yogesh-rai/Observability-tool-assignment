@@ -1,0 +1,77 @@
+.custom-tooltip {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    opacity: 0.9;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 13px;
+    z-index: 1000;
+}
+
+.custom-tooltip .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.custom-tooltip .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-tooltip .item {
+    margin-bottom: 5px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    background-color: #2B9EB3;
+    border-color: #2B9EB3;
+    color: white;
+    transition: all 0.2s ease;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: #207483;
+}
+
+.daterange-input {
+    width: 300px;
+    padding: 0.4rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+
+.special-checkbox input[type="checkbox"] {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.special-checkbox label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: #E8E8E6;
+    border-bottom: 2px solid #A7A7A7;
+}
+

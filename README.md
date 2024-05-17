@@ -1,70 +1,65 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project visualizes a dataset using a line chart, providing insights into the number of requests for different endpoints over time.
 
-In the project directory, you can run:
 
-### `npm start`
+## LineChartComponent
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The `LineChartComponent` is the core component responsible for rendering the line chart visualization using the `recharts` library. It displays the number of requests for different endpoints over time and integrates several features to enhance user interaction and data analysis.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Functioning
 
-### `npm test`
+1. **Data Processing**:
+   - The component processes the raw dataset to extract unique timestamps and endpoints.
+   - Missing data points are filled with zero values to ensure a continuous line chart without gaps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Line Chart Component**:
+   - Renders the line chart with data for different endpoints.
+   - Integrates filters and tooltips for enhanced user interaction.
 
-### `npm run build`
+3. **Date/Time Range Filter**:
+   - Allows users to manually select a date range to filter the data displayed in the chart.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Special Endpoint Filter**:
+   - A checkbox filter to display only the special endpoints in the chart.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. **Custom Tooltip**:
+   - Provides detailed information about data points on hover.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. **Reset Button**
+   - Also added a reset button which will reset all the filters to it's default state.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Design Choices
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Date/Time Range Filter
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Design Choice:**
+I opted for a custom date/time range picker that allows users to manually select the start and end dates. This provides flexibility for users to filter the data within any desired timeframe.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Implementation:**
+- I created a custom component, `CustomDateRangePicker`, which let users manually select the date/time range.
+- I used 'reat-datepicker' library for creating this component.
+- The selected date range updates the state, which in turn filters the displayed data.
+- The `recharts` library's `LineChart` component is updated dynamically based on the filtered data.
 
-## Learn More
+### Special Endpoint Filter
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Design Choice:**
+Added a simple checkbox to allow users to filter the data based on a special flag (`special: true`). This makes it easy to highlight and analyze specific data points marked as special.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Implementation:**
+- A checkbox input is provided for users to toggle the filter.
+- The state is updated based on the checkbox value, filtering the data accordingly.
+- The `LineChart` component updates to reflect the filtered data.
 
-### Code Splitting
+### Custom Tooltip
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Design Choice:**
+The tooltip was customized to enhance readability and provide detailed information about the data points.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Implementation:**
+- Created a custom `CustomTooltip` component to format and display the tooltip content.
+- Used CSS for styling the tooltip.
+- The tooltip displays the date/time, endpoint, and number of requests, providing a comprehensive view of the data point.
