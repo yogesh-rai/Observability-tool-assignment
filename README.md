@@ -3,7 +3,6 @@
 
 This project visualizes a dataset using a line chart, providing insights into the number of requests for different endpoints over time.
 
-
 ## LineChartComponent
 
 The `LineChartComponent` is the core component responsible for rendering the line chart visualization using the `recharts` library. It displays the number of requests for different endpoints over time and integrates several features to enhance user interaction and data analysis.
@@ -63,3 +62,18 @@ The tooltip was customized to enhance readability and provide detailed informati
 - Created a custom `CustomTooltip` component to format and display the tooltip content.
 - Used CSS for styling the tooltip.
 - The tooltip displays the date/time, endpoint, and number of requests, providing a comprehensive view of the data point.
+
+### Live Preview
+
+Deployed this on the web using Netlify for preview:   https://main--observabilitytool-assignment.netlify.app/
+
+
+### Screenshots
+
+![assignment-ss_1](https://github.com/yogesh-rai/Observability-tool-assignment/assets/69380654/4b769f16-8275-423b-8bba-9a61fa1ceb60)
+
+![assignment-ss_2](https://github.com/yogesh-rai/Observability-tool-assignment/assets/69380654/5dfa7ec9-3fc9-4288-85ac-9b99e63cabe4)
+
+![assignment-ss_3](https://github.com/yogesh-rai/Observability-tool-assignment/assets/69380654/9f2f5c48-db3c-4940-ad13-11c1ac8a6f80)
+
+
